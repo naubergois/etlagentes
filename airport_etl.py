@@ -33,7 +33,7 @@ def generate_simulated_data(spark=None):
     airlines = ["TAM", "GOL", "AZUL"]
     data = []
     base_time = datetime(2024, 1, 1, 6, 0)
-    for i in range(100):
+    for i in range(10):
         dep = base_time + timedelta(minutes=10 * i)
         arr = dep + timedelta(minutes=60 + random.randint(-10, 20))
         delay = random.randint(-15, 120)
