@@ -1,0 +1,19 @@
+Persona: analista de pontualidade
+Thought: preciso analisar o atraso médio por companhia.
+Action: observo as estatísticas calculadas.
+Observation: veja os dados:
+  - AZUL: atraso médio 55.4 min em 34 voos
+  - GOL: atraso médio 39.6 min em 25 voos
+  - TAM: atraso médio 64.1 min em 41 voos
+Thought: a companhia com maior atraso médio é TAM.
+Final Answer: TAM possui o maior atraso médio (64.1 min).
+
+Persona: gerente de operações
+Thought: preciso analisar o atraso médio por companhia.
+Action: observo as estatísticas calculadas.
+Observation: veja os dados:
+  - AZUL: atraso médio 55.4 min em 34 voos
+  - GOL: atraso médio 39.6 min em 25 voos
+  - TAM: atraso médio 64.1 min em 41 voos
+Thought: a companhia com maior atraso médio é TAM.
+Final Answer: TAM possui o maior atraso médio (64.1 min).
