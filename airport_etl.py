@@ -136,7 +136,12 @@ class LangChainReactAgent:
 def main():
     spark = None
     if SPARK_AVAILABLE:
-        spark = SparkSession.builder.appName("AirportETL").getOrCreate()
+        spark = (
+            SparkSession.builder.master("local[*]")
+            .appName("AirportETL")
+            .getOrCreate()
+        )
+        spark.sparkContext.setLogLevel("ERROR")
     data = generate_simulated_data(spark)
     stats = transform_data(data, spark)
 
