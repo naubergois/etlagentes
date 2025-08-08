@@ -13,6 +13,8 @@ Este projeto demonstra um pipeline ETL simples usando dados simulados de um aero
 - (Opcional) [PySpark](https://spark.apache.org/docs/latest/api/python/) para usar o Spark.
 - (Opcional) [LangChain](https://python.langchain.com/), [OpenAI](https://pypi.org/project/openai/) e [python-dotenv](https://pypi.org/project/python-dotenv/) para o agente baseado em LLM.
 
+> Em ambientes Windows, defina as variáveis de ambiente `SPARK_HOME` e `HADOOP_HOME` para evitar avisos sobre `winutils.exe`.
+
 Para instalar as dependências opcionais quando houver acesso à internet:
 
 ```bash
