@@ -51,7 +51,7 @@ def generate_simulated_data(spark=None):
     return data
 
 
-def transform_data(data, spark=None):
+def transform_data(data, spark=None, limit=1000):
     """Compute statistics using Spark when available."""
     if spark:
         df = data
@@ -60,7 +60,10 @@ def transform_data(data, spark=None):
             .agg(avg("delay").alias("avg_delay"), count("*").alias("num_flights"))
             .orderBy("airline")
         )
-        return [row.asDict() for row in stats.collect()]
+        # Avoid bringing a very large result back to the driver
+        limited = stats.limit(limit)
+        limited.write.mode("overwrite").parquet("output/stats")
+        return [row.asDict() for row in limited.collect()]
 
     # fallback plain Python implementation
     totals = {}
